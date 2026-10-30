@@ -1,12 +1,11 @@
-def main():
+def main() -> None:
     print("=== Welcome to My Garden ===")
     name: str = "Bob"
     height: int = 205
     age: int = 4
     print(f"Plant: {name}")
     print(f"Height: {height}cm")
-    print(f"Age: {age} days")
-
+    print(f"Age: {age} days", end="\n\n")
     print("""=== End of Program ===""")
 
 
