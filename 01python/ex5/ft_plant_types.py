@@ -79,15 +79,23 @@ class Tree(Plant):
 class Vegetable(Plant):
     def __init__(self, name: str, height: float,
                  days: int, growth_rate: float,
-                 harvest_season: str, nutritional_value: int) -> None:
+                 harvest_season: str, nutritional_value: float) -> None:
         super().__init__(name, height, days, growth_rate)
         self.harvest_season = harvest_season
         self.nutritional_value = nutritional_value
 
+    def grow(self) -> None:
+        super().grow()
+        self.nutritional_value += 0.5
+
+    def age(self) -> None:
+        super().age()
+        self.nutritional_value += 0.5
+
     def show(self) -> None:
         super().show()
         print(f" Harvest season: {self.harvest_season}")
-        print(f" Nutritional value: {self.nutritional_value}")
+        print(f" Nutritional value: {round(self.nutritional_value)}")
 
 
 def main() -> None:
@@ -108,7 +116,6 @@ def main() -> None:
     for i in range(20):
         tomato.grow()
         tomato.age()
-        tomato.nutritional_value += 1
     tomato.show()
 
 
